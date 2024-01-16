@@ -1,0 +1,3 @@
+D:/0x04_development/cpp-course-spring-2024/cmake-build-debug/CMakeFiles/cpp_course_spring_2024.dir
+D:/0x04_development/cpp-course-spring-2024/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/0x04_development/cpp-course-spring-2024/cmake-build-debug/CMakeFiles/rebuild_cache.dir
