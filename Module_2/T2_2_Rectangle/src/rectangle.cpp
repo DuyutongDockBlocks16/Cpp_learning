@@ -31,7 +31,7 @@ void Rectangle() {
     double width;
     double height;
 
-    std::cout << "Please enter width and height " << std::endl;
+    std::cout << "Please enter width and height" << std::endl;
 
     std::cin >> width;
 
