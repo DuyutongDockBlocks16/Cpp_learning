@@ -21,10 +21,25 @@ will need to actually calculate the area and circumference.
 #include "rectangle.hpp"
 
 #include <iostream>
+#include <sstream>
 
 // Write you function here and test it with the main.
 
 void Rectangle() {
-    
+
+    std::string widthAndHeight;
+    double width;
+    double height;
+
+    std::cout << "Please enter width and height " << std::endl;
+
+    std::cin >> width;
+
+    std::cin >> height;
+
+    std::cout << "Area: "<< width * height << std::endl;
+
+    std::cout << "Circumference: " << 2 * width + 2 * height << std::endl;
+
 }
 
