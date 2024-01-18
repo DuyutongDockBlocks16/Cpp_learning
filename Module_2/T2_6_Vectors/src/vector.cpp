@@ -3,16 +3,43 @@
 #include <vector>
 
 int GetMin(std::vector<int> v) {
-  
-  return 0; 
+
+    int min = v[0];
+
+    for(unsigned i = 0; i<v.size(); i++){
+        if(v[i] < i){
+            min = v[i];
+        }
+    }
+
+    return min;
+
 }
 
 int GetMax(std::vector<int> v) {
-  
-  return 0; 
+
+    int max = v[0];
+
+    for(unsigned i = 0; i<v.size(); i++){
+        if(v[i] > i){
+            max = v[i];
+        }
+    }
+
+    return max;
+
 }
 
 double GetAvg(std::vector<int> v) {
-  
-  return 0.0; 
+
+    double sum = 0.0;
+
+    for(unsigned i = 0; i<v.size(); i++){
+
+        sum += v[i];
+
+    }
+
+    return sum/v.size();
+
 }
