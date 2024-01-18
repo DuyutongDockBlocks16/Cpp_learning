@@ -51,7 +51,7 @@ void BankAccount::Print() const {
     }
 
 
-    std::cout << "Account num: " << account_number_ << ", owned by:" << owner_<<", balance:"<<correct_balance<<" eur."<< std::endl;
+    std::cout << "Account num: " << account_number_ << ", owned by: " << owner_<<", balance: "<<correct_balance<<" eur."<< std::endl;
 }
 
 bool Transfer(BankAccount& source_account, BankAccount& target_account, double amount){
