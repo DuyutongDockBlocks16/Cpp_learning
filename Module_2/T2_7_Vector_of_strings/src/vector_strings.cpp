@@ -6,13 +6,14 @@
 void Adder(std::vector<std::string>& names) {
     std::string name;
     std::cout<<"Enter a name:"<<std::endl;
-    std::cout<<"    ";
+//    std::cout<<"    ";
     std::cin>>name;
 
     names.push_back(name);
 
     std::cout<<"Number of names in the vector:"<<std::endl;
-    std::cout<<"    "<< names.size() <<std::endl;
+//    std::cout<<"    "<< names.size() <<std::endl;
+    std::cout<< names.size() <<std::endl;
 }
 
 void Remover(std::vector<std::string>& names) {
