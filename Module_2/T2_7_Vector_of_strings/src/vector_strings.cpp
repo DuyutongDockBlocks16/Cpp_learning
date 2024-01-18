@@ -37,7 +37,7 @@ void CMDReader() {
 
     std::cout<<"Commands: ADD, PRINT, REMOVE, QUIT"<<std::endl;
     std::cout<<"Enter a command"<<std::endl;
-    std::cout<<"    ";
+//    std::cout<<"    ";
     std::cin >> input_command;
 
     while(input_command!="QUIT"){
@@ -60,7 +60,7 @@ void CMDReader() {
         }
 
         std::cout<<"Enter a command"<<std::endl;
-        std::cout<<"    ";
+//        std::cout<<"    ";
         std::cin >> input_command;
     }
 
