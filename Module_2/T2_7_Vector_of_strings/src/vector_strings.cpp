@@ -36,7 +36,7 @@ void CMDReader() {
     std::vector<std::string> names;
 
     std::cout<<"Commands: ADD, PRINT, REMOVE, QUIT"<<std::endl;
-    std::cout<<"Enter a command"<<std::endl;
+    std::cout<<"Enter a command:"<<std::endl;
 //    std::cout<<"    ";
     std::cin >> input_command;
 
@@ -59,7 +59,7 @@ void CMDReader() {
 
         }
 
-        std::cout<<"Enter a command"<<std::endl;
+        std::cout<<"Enter a command:"<<std::endl;
 //        std::cout<<"    ";
         std::cin >> input_command;
     }
