@@ -15,7 +15,7 @@ int main() {
   // Print the contents
   Print(list);
   std::cout << "---" << std::endl;
-  // Sort and unique
+//   Sort and unique
   SortAndUnique(list);
   Print(list);
   std::cout << "---" << std::endl;
