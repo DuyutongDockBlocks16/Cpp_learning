@@ -36,7 +36,7 @@ void PrintSum2(const std::vector<int>& v) {
     int vector_size = v.size();
     int portion = 2;
 
-    int cycle_time = (vector_size + portion - 1) / portion;
+    int cycle_time = vector_size / portion;
 
 //    std::cout << cycle_time<<std::endl;
 
