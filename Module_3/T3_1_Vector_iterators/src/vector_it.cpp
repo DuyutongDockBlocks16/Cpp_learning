@@ -40,7 +40,7 @@ void PrintSum2(const std::vector<int>& v) {
 
 //    std::cout << cycle_time<<std::endl;
 
-    for(unsigned i=0; i < cycle_time; i++ ){
+    for(int i=0; i < cycle_time; i++ ){
         std::cout << v[i] + v[v.size()-1-i]<<" ";
     }
 
