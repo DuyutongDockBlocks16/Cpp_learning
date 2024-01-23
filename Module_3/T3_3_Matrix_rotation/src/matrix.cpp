@@ -55,11 +55,20 @@ Matrix ReadMatrix(int n) {
 
 Matrix Rotate90Deg(const Matrix &m) {
 
+    if (m.empty() || m[0].empty()){
+        return Matrix();
+    }
+
     unsigned long long rows = m.size();
-    unsigned long long cols = m[0].size();
+    unsigned long long cols = m[0].size();//59行
     Matrix rotated(cols, std::vector<int>(rows));
 
     for (unsigned long long i = 0; i < rows; ++i) {
+        if (m[i].size() != cols) {
+            // 处理不一致的行长度
+            // 可以抛出异常或以其他方式处理
+            throw std::runtime_error("Inconsistent row sizes in matrix");
+        }
         for (unsigned long long j = 0; j < cols; ++j) {
             rotated[j][rows - 1 - i] = m[i][j];
         }
