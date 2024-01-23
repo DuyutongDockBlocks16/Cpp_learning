@@ -59,8 +59,8 @@ Matrix Rotate90Deg(const Matrix &m) {
     unsigned long long cols = m[0].size();
     Matrix rotated(cols, std::vector<int>(rows));
 
-    for (int i = 0; i < rows; ++i) {
-        for (int j = 0; j < cols; ++j) {
+    for (unsigned long long i = 0; i < rows; ++i) {
+        for (unsigned long long j = 0; j < cols; ++j) {
             rotated[j][rows - 1 - i] = m[i][j];
         }
     }
