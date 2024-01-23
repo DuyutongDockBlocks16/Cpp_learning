@@ -80,6 +80,20 @@ Matrix Rotate90Deg(const Matrix &m) {
 
 void Print(const Matrix &m) {
 
+    if (m.empty()) {
+        std::cout << "The matrix is empty." << std::endl;
+        return;
+    }
+
+    // 假设矩阵的所有行都有相同的长度
+    unsigned long long cols = m[0].size();
+    for (const auto& row : m) {
+        if (row.size() != cols) {
+            std::cout << "Inconsistent row sizes in matrix." << std::endl;
+            return;
+        }
+    }
+
     std::cout << "Printing out a "<< m.size() << " x "<< m[0].size() <<" matrix:" << std::endl;
 
     for (const auto& row : m) {
