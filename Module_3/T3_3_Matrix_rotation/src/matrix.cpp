@@ -81,7 +81,7 @@ Matrix Rotate90Deg(const Matrix &m) {
 void Print(const Matrix &m) {
 
     if (m.empty()) {
-        std::cout << "The matrix is empty." << std::endl;
+        std::cout << "Printing out a 0 x 0 matrix:" << std::endl;
         return;
     }
 
