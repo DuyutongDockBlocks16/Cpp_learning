@@ -55,8 +55,8 @@ Matrix ReadMatrix(int n) {
 
 Matrix Rotate90Deg(const Matrix &m) {
 
-    int rows = m.size();
-    int cols = m[0].size();
+    unsigned long long rows = m.size();
+    unsigned long long cols = m[0].size();
     Matrix rotated(cols, std::vector<int>(rows));
 
     for (int i = 0; i < rows; ++i) {
