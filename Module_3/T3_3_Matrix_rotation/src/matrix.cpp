@@ -79,6 +79,9 @@ Matrix Rotate90Deg(const Matrix &m) {
 }
 
 void Print(const Matrix &m) {
+
+    std::cout << "Printing out a "<< m.size() << " x "<< m[0].size() <<" matrix:" << std::endl;
+
     for (const auto& row : m) {
         for (int element : row) {
             std::cout << element << " ";
