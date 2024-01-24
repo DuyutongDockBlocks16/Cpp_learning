@@ -173,10 +173,10 @@ class Book {
 
   void Print();
 
-  bool operator==(const Book& other) const {
-     // 根据需要比较Book对象的属性来判断它们是否相等
-     return (this->name_ == other.name_ && this->author_ == other.author_ && this->isbn_ == other.isbn_);
-  }
+//  bool operator==(const Book& other) const {
+//     // 根据需要比较Book对象的属性来判断它们是否相等
+//     return (this->name_ == other.name_ && this->author_ == other.author_ && this->isbn_ == other.isbn_);
+//  }
  private:
   std::string name_;
   std::string author_;

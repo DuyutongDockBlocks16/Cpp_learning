@@ -35,9 +35,16 @@ bool Customer::LoanBook(Book &b){
 void Customer::ReturnBook(Book &b){
 
     Book elementToRemove = b; // 要删除的元素
-    auto it = std::find(loaned_books_.begin(), loaned_books_.end(), elementToRemove);
-    if (it != loaned_books_.end()) {
-        loaned_books_.erase(it); // 删除找到的元素
+    std::string ISBN_of_elementToRemove = b.GetISBN();
+
+    for (auto it = loaned_books_.begin(); it != loaned_books_.end(); ++it) {
+
+        std::string ISBN_of_current_book = it->GetISBN();
+
+        if (ISBN_of_current_book == ISBN_of_elementToRemove) {
+            loaned_books_.erase(it);
+            break;
+        }
     }
 
     b.Restore();
