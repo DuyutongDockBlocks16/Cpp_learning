@@ -41,8 +41,7 @@ public:
      * \param collection a PokemonCollection
      * \param collection2 a PokemonCollection
      */
-    PokemonCollection(PokemonCollection collection,
-                      PokemonCollection collection2);
+    PokemonCollection(PokemonCollection collection, PokemonCollection collection2);
 
     /**
      * \brief adds a pokemon to the end of the collection
