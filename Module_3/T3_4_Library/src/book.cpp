@@ -75,6 +75,7 @@ bool Book::Loan() {
 
 void Book::Restore() {
     loaned_ = false;
+    due_date_ = Date{0,0,0};
 }
 
 void Book::Print() {
