@@ -101,7 +101,7 @@ class Library {
    * \return A copy of the found customer. if a Customer is not found, a new
    * Customer with empty name and id is returned.
    */
-  std::vector<Customer> FindCustomer(const std::string &id);
+  Customer FindCustomer(const std::string &id);
   
 
  private:

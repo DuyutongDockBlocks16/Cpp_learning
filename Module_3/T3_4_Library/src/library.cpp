@@ -65,19 +65,20 @@ std::vector<Book> Library::FindAllLoanedBooks() {
     return found_vec;
 }
 
-std::vector<Customer> Library::FindCustomer(const std::string &id) {
+Customer Library::FindCustomer(const std::string &id) {
 
-    std::vector<Customer> found_vec;
-    found_vec.clear();
+
 
     for (const auto &customer: customers_){
         std::string customer_id = customer.GetID();
         if(customer_id==id){
-            found_vec.push_back(customer);
+            return customer;
         }
     }
 
-    return found_vec;
+    return Customer{"",""};
+
+
 }
 
 
