@@ -33,9 +33,11 @@ bool PokemonCollection::Remove(const std::string &name, size_t id) {
 }
 
 void PokemonCollection::Print() const {
-    for (const auto& pokemon : pokemons_) {
-        std::cout << "id: " << pokemon.second << ", name: " << pokemon.first << "\n";
-    }
+//    for (const auto& pokemon : pokemons_) {
+//        std::cout << "id: " << pokemon.second << ", name: " << pokemon.first << "\n";
+//    }
+
+    std::cout << "111111111111111111111111";
 }
 
 void PokemonCollection::SortByName() {
