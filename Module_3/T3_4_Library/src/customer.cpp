@@ -55,7 +55,10 @@ void Customer::Print() const {
     std::cout << "Customer: " << name_ << ", " << customer_id_ <<", has " << loaned_books_.size() << " books on loan:" << std::endl;
 
     for(const auto & loaned_book : loaned_books_){
-        std::cout<<"- Book: "<< loaned_book.GetName() <<", author: "<< loaned_book.GetAuthor() <<", ISBN: "<< loaned_book.GetISBN() <<", loaned "<< loaned_book.GetStatus() <<", due date: "<< loaned_book.GetDueDate().day <<"."<< loaned_book.GetDueDate().month << "."<< loaned_book.GetDueDate().year <<std::endl;
+
+        std::string load_string = loaned_book.GetStatus() ? "true" : "false";
+
+        std::cout<<"- Book: "<< loaned_book.GetName() <<", author: "<< loaned_book.GetAuthor() <<", ISBN: "<< loaned_book.GetISBN() <<", loaned "<< load_string <<", due date: "<< loaned_book.GetDueDate().day <<"."<< loaned_book.GetDueDate().month << "."<< loaned_book.GetDueDate().year <<std::endl;
     }
 
 }
