@@ -69,7 +69,7 @@ int main(void) {
   tmp_v = l.FindAllLoanedBooks();
   for (auto &b : tmp_v) b.Print();
   auto tmp2 = l.FindCustomer("34674568");
-  tmp2.Print();
+//  tmp2.Print();
 
   return 0;
 }

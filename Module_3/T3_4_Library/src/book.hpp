@@ -4,6 +4,7 @@
 #include <ctime>
 #include <string>
 
+
 /**
  * \brief Date structure
  *
@@ -37,6 +38,7 @@ struct Date {
 
 class Book {
  public:
+
   /**
    * \brief Construct a new Book object
    *
@@ -48,6 +50,7 @@ class Book {
    * \param due_date due date as a Date structure (Date), which is by default
    *                  0-0-0
    */
+  Book(const std::string& name, const std::string& author, const std::string& isbn, bool loaned = false, Date due_date = Date{0,0,0});
   
 
   /**
@@ -60,6 +63,9 @@ class Book {
    *
    * \return the Book's name as a std::string
    */
+
+  std::string GetName() const;
+
   
 
   /**
@@ -72,6 +78,7 @@ class Book {
    *
    * \return std::string
    */
+  std::string GetAuthor() const;
   
 
   /**
@@ -84,7 +91,7 @@ class Book {
    *
    * \return std::string
    */
-  
+  std::string GetISBN() const;
 
   /**
    * \brief Get the Book's status as a bool, takes no parameters.
@@ -97,6 +104,8 @@ class Book {
    * \return true if the book is loaned
    * \return false otherwise
    */
+
+  bool GetStatus() const;
   
 
   /**
@@ -109,6 +118,7 @@ class Book {
    *
    * \return Date
    */
+   Date GetDueDate() const;
   
 
   /**
@@ -129,6 +139,7 @@ class Book {
    * \return true if loaning is successful
    * \return false otherwise.
    */
+   bool Loan();
   
 
   /**
@@ -140,6 +151,7 @@ class Book {
    *
    * Function identifier: Restore
    */
+   void Restore();
   
 
   /**
@@ -158,8 +170,13 @@ class Book {
    *
    * Function identifier: Print
    */
-  
 
+  void Print();
+
+  bool operator==(const Book& other) const {
+     // 根据需要比较Book对象的属性来判断它们是否相等
+     return (this->name_ == other.name_ && this->author_ == other.author_ && this->isbn_ == other.isbn_);
+  }
  private:
   std::string name_;
   std::string author_;

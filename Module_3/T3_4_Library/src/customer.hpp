@@ -14,6 +14,8 @@ class Customer {
    * \param name the customer's name (reference to const string)
    * \param id the customer number (reference to const string)
    */
+  Customer(const std::string &name, const std::string &id);
+
   
 
   /**
@@ -26,6 +28,8 @@ class Customer {
    *
    * \return std::string
    */
+
+  std::string GetName() const;
   
 
   /**
@@ -39,6 +43,7 @@ class Customer {
    *
    * \return std::string
    */
+  std::string GetID() const;
   
 
   /**
@@ -51,6 +56,7 @@ class Customer {
    *
    * \return int
    */
+  int GetLoanAmount() const;
   
 
   /**
@@ -63,6 +69,7 @@ class Customer {
    *
    * \return std::vector<Book>
    */
+  std::vector<Book> GetLoans() const;
   
 
   /**
@@ -74,6 +81,7 @@ class Customer {
    *
    * \return  the result of loaning (from Book::loan function).
    */
+  bool LoanBook(Book &b);
   
 
   /**
@@ -84,6 +92,7 @@ class Customer {
    *
    * \param b a reference to a book
    */
+   void ReturnBook(Book &b);
   
 
   /**
@@ -106,14 +115,19 @@ class Customer {
    *
    * (Book details must be printed on a single line)
    */
+   void Print() const;
   
 
- private:
-  /* Member variables:
+
+/* Member variables:
    * name (string)
    * customer id (string)
    * vector of loaned books (vector<Book>)
    */
+
+  std::string name_;
+  std::string customer_id_;
+  std::vector<Book> loaned_books_;
   
 };
 

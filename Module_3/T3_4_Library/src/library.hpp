@@ -14,6 +14,7 @@ class Library {
    *
    * \param name the library's name (const reference to string)
    */
+   explicit Library(const std::string &name, const std::vector<Book> &books = {}, const std::vector<Customer> &customers = {});
   
 
   /**
@@ -26,6 +27,7 @@ class Library {
    *
    * \return std::string
    */
+  std::string GetName() const;
   
 
   /**
@@ -36,6 +38,7 @@ class Library {
    *
    * \return std::vector<Book>&
    */
+  std::vector<Book>& GetBooks();
   
 
   /**
@@ -44,8 +47,9 @@ class Library {
    *
    * Function identifier: GetCustomers
    *
-   * \return std::vector<Customer>&
+   * \return std::vector<GetCustomers>&
    */
+  std::vector<Customer>& GetCustomers();
   
 
   /**
@@ -59,6 +63,8 @@ class Library {
    * not found, a new book with an empty strings as parameters for the name,
    * author and isbn is returned.
    */
+
+  Book FindBookByName(const std::string &name);
   
 
   /**
@@ -71,6 +77,7 @@ class Library {
    * \return a vector of Books with the specified author. If no books are found,
    * an empty vector is returned.
    */
+   std::vector<Book> FindBooksByAuthor(const std::string &name);
   
 
   /**
@@ -81,6 +88,7 @@ class Library {
    * \return a vector of loaned Books. If no books are found,
    * an empty vector is returned.
    */
+  std::vector<Book> FindAllLoanedBooks();
   
 
   /**
@@ -93,6 +101,7 @@ class Library {
    * \return A copy of the found customer. if a Customer is not found, a new
    * Customer with empty name and id is returned.
    */
+  std::vector<Customer> FindCustomer(const std::string &id);
   
 
  private:
@@ -101,6 +110,9 @@ class Library {
    * books (vector<Book>)
    * customers (vector<Customer>)
    */
+  std::string name_;
+  std::vector<Book> books_;
+  std::vector<Customer> customers_;
   
 };
 
