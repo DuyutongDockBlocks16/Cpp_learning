@@ -100,6 +100,12 @@ class Aviary {
       }
   }
 
+    // 禁止拷贝构造函数
+    Aviary(const Aviary&) = delete;
+
+    // 禁止拷贝赋值运算符
+    Aviary& operator=(const Aviary&) = delete;
+
    private:
   // TODO: declare the required members
     std::vector<Bird*> birds;
