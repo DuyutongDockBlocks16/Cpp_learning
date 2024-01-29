@@ -20,7 +20,10 @@
  */
 class Dog : public Mammal {
 public:
-    Dog(std::string name, double weight);
+    Dog(std::string name, double weight) : Mammal(weight), name_(name) {
+        name_ = name;
+    }
+
     std::string GetName();
 
     static std::string MakeSound();

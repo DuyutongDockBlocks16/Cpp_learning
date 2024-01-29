@@ -24,7 +24,7 @@ class Mammal {
    */
   double GetWeight();
 
-protected:
+private:
   double weight_;
 };
 
