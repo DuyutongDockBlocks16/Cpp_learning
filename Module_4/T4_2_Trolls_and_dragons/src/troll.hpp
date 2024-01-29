@@ -10,7 +10,20 @@
  * required functionalities outlined in the given main function
  */
 class Troll : public Creature {
+public:
+    Troll(const std::string& name, int hitpoints)
+            : Creature(name,"Troll",hitpoints){
+    }
+
+    std::string getName() const{
+        return Creature::GetName();
+    };
+
+    int getHitPoints() const{
+        return Creature::GetHitPoints();
+    }
   
 };
 
+std::ostream& operator<<(std::ostream& os, const Troll& troll);
 #endif
