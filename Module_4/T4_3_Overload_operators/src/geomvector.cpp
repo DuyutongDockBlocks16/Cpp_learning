@@ -16,6 +16,27 @@ std::ostream &operator<<(std::ostream& out, const GeomVector& a) {
     return out;
 }
 
-double GeomVector::Length() const {
-    return sqrt(pow(x_, 2) + pow(y_, 2) + pow(z_, 2));
+GeomVector GeomVector::operator/(double scalar) const {
+    return GeomVector(x_ / scalar, y_ / scalar, z_ / scalar);
 }
+
+bool GeomVector::operator<(const GeomVector& other) const {
+    return this->Length() < other.Length();
+}
+
+bool GeomVector::operator>(const GeomVector& other) const {
+    return this->Length() > other.Length();
+}
+
+bool GeomVector::operator==(const GeomVector& other) const {
+    return x_ == other.x_ && y_ == other.y_ && z_ == other.z_;
+}
+
+bool GeomVector::operator!=(const GeomVector& other) const {
+    return !(*this == other);
+}
+
+double GeomVector::Length() const {
+    return std::sqrt(x_ * x_ + y_ * y_ + z_ * z_);
+}
+
