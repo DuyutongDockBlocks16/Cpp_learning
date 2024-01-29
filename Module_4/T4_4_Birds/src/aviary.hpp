@@ -13,7 +13,9 @@
  */
 class Aviary {
  public:
-  Aviary() {}
+  Aviary() {
+
+  }
 
   /**
    * \brief TODO: method Add adds the given bird to the aviary.
@@ -25,6 +27,7 @@ class Aviary {
    * \param bird A pointer to a bird object.
    * \return nothing
    */
+   void Add(Bird* bird);
   
   /**
    * \brief TODO: method SpeakAll calls the Speak method with the given
@@ -35,6 +38,11 @@ class Aviary {
    * \param os A reference to the desired ostream.
    * \return nothing
    */
+   void SpeakAll(std::ostream& os) const{
+      for (const Bird* bird : birds) {
+          bird->Speak(os);
+      }
+   }
   
   /**
    * \brief TODO: method Size returns the number of birds in the aviary.
@@ -44,6 +52,9 @@ class Aviary {
    *
    * \return How many birds there are in the aviary.
    */
+   unsigned long long Size(){
+      return birds.size();
+   }
   
   /**
    * \brief TODO: non-const version of the indexing operator [].
@@ -53,6 +64,13 @@ class Aviary {
    * \param idx desired index as an size_t integer value.
    * \return A pointer to the bird (Bird*) at the index given as an argument
    */
+
+  Bird* operator[](std::size_t idx) {
+      if (idx >= birds.size()) {
+          throw std::out_of_range("Index out of bounds");
+      }
+      return birds[idx];
+  }
   
   /**
    * \brief TODO: const version of the indexing operator [].
@@ -63,15 +81,29 @@ class Aviary {
    * \return A pointer to the bird (const Bird*) at the index given as an
    * argument
    */
+
+  const Bird* operator[](std::size_t idx) const {
+      if (idx >= birds.size()) {
+          throw std::out_of_range("Index out of bounds");
+      }
+      return birds[idx];
+  }
   
   /**
    * \brief TODO: destructor. Takes no parameters.
    *
    * \return nothing
    */
+  ~Aviary() {
+      for (Bird* bird : birds) {
+          delete bird;
+      }
+  }
+
    private:
   // TODO: declare the required members
-  
+    std::vector<Bird*> birds;
+
 };
 
 #endif

@@ -13,7 +13,18 @@
  * Due to the simplicity of the class, all of its member functions are
  * implemented in this header file.
  */
+class Owl:public Bird{
+public:
 
+    explicit Owl(const std::string& name): Bird(name){
+
+    }
+
+    void Speak(std::ostream& os) const override {
+        os << GetName() << ": WHUU\n";
+    }
+
+};
 
 
 #endif
