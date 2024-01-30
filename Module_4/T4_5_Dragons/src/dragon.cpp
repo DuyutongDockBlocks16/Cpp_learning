@@ -12,7 +12,7 @@ size_t Dragon::GetSize() const {
     return size_;
 }
 
-std::list<Treasure> Dragon::GetTreasures() const {
+std::vector<Treasure> Dragon::GetTreasures() const {
     return treasures_;
 }
 
