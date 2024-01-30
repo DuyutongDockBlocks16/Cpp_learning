@@ -45,6 +45,10 @@ public:
 
     };
 
+    ~MagicDragon() override {
+        treasures_.clear();
+    }
+
     void Eat(std::list<Food>& foodList) override;
     void Hoard(std::list<Treasure>& treasureList) override;
 };
