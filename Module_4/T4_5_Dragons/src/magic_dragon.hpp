@@ -41,7 +41,7 @@ end.
 
 class MagicDragon: public Dragon{
 public:
-    MagicDragon(std::string const &name, size_t age, size_t size): Dragon(name, age, size, std::vector<Treasure>()){
+    MagicDragon(std::string const &name, size_t age, size_t size): Dragon(name, age, size, std::list<Treasure>()){
 
     };
 

@@ -78,7 +78,7 @@ struct Food
 
 class Dragon{
 public:
-    Dragon(std::string const &name, size_t age, size_t size, std::vector<Treasure> treasures) : name_(name), age_(age), size_(size), treasures_(treasures){};
+    Dragon(std::string const &name, size_t age, size_t size, std::list<Treasure> treasures) : name_(name), age_(age), size_(size), treasures_(treasures){};
 
     virtual ~Dragon() { }
 
@@ -91,7 +91,7 @@ public:
 
     size_t GetSize() const;
 
-    std::vector<Treasure> GetTreasures() const;
+    const std::list<Treasure>& GetTreasures() const;
 
     virtual void Eat(std::list<Food>& foodList) = 0;
 
@@ -103,7 +103,7 @@ protected:
     std::string name_;
     size_t age_;
     size_t size_;
-    std::vector<Treasure> treasures_;
+    std::list<Treasure> treasures_;
 
 };
 
