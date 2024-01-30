@@ -79,9 +79,12 @@ class Dragon{
 public:
     Dragon(std::string const &name, size_t age, size_t size, std::list<Treasure> treasures) : name_(name), age_(age), size_(size), treasures_(treasures){};
 
-    ~Dragon() {
-        treasures_.clear();
-    } ;
+    virtual ~Dragon() { }
+
+//    ~Dragon() {
+//        treasures_.clear();
+//    } ;
+
 
     size_t GetAge() const;
 
