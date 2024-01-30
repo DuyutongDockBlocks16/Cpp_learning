@@ -40,3 +40,14 @@ end.
  *
  */
 
+class FantasyDragon: public Dragon{
+public:
+    FantasyDragon(std::string const &name, size_t age, size_t size): Dragon(name, age, size, std::list<Treasure>()){
+
+    }
+
+    void Eat(std::list<Food>& foodList) override;
+
+    void Hoard(std::list<Treasure>& treasureList) override;
+
+};

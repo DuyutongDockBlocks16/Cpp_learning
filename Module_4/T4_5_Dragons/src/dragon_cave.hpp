@@ -62,3 +62,29 @@
  * \return The output stream given as one of the arguments.
  *
  */
+
+#include "Dragon.hpp" // 包含 Dragon 类的头文件
+#include <list>
+#include <iostream>
+
+class DragonCave
+{
+public:
+    DragonCave(); // 参数less 构造函数
+    ~DragonCave(); // 析构函数
+
+    // 获取 DragonCave 中的龙的列表
+    const std::list<Dragon*>& GetDragons() const;
+
+    // 添加龙到 DragonCave 中
+    void Accommodate(Dragon* dragon);
+
+    // 根据龙的名称从 DragonCave 中移除龙
+    void Evict(const std::string& dragonName);
+
+    // 重载 << 操作符，用于打印 DragonCave 中的龙列表
+    friend std::ostream& operator<<(std::ostream& os, const DragonCave& cave);
+
+private:
+    std::list<Dragon*> dragons_; // 存储 Dragon 指针的列表
+};
