@@ -12,9 +12,10 @@ size_t Dragon::GetSize() const {
     return size_;
 }
 
-std::vector<Treasure> Dragon::GetTreasures() const {
+const std::list<Treasure> &Dragon::GetTreasures() const {
     return treasures_;
 }
+
 
 std::ostream& operator<<(std::ostream& os, const Dragon& dragon)
 {
