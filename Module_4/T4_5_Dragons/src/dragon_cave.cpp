@@ -50,9 +50,13 @@ void DragonCave::Evict(const std::string& dragonName)
 std::ostream& operator<<(std::ostream& os, const DragonCave& cave)
 {
     os << "DragonCave dwellers:\n\n";
-    for (const Dragon* dragon : cave.dragons_)
+    for (auto it = cave.dragons_.begin(); it != cave.dragons_.end(); ++it)
     {
-        os << *dragon << "\n";
+        os << **it;  // Dereference twice to get the Dragon object
+        if (std::next(it) != cave.dragons_.end())
+        {
+            os << "\n";
+        }
     }
     return os;
 }
