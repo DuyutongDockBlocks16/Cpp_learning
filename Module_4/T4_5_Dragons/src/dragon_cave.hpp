@@ -83,6 +83,9 @@ public:
     // 根据龙的名称从 DragonCave 中移除龙
     void Evict(const std::string& dragonName);
 
+    DragonCave(const DragonCave&) = delete;
+    DragonCave& operator=(const DragonCave&) = delete;
+
     // 重载 << 操作符，用于打印 DragonCave 中的龙列表
     friend std::ostream& operator<<(std::ostream& os, const DragonCave& cave);
 
