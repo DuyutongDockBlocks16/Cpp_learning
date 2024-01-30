@@ -1,5 +1,9 @@
 #pragma once
 
+#include "dragon.hpp"
+#include <list>
+#include <iostream>
+
 /**
  * \brief The DragonCave class is a storage class for Dragons.
  *
@@ -63,15 +67,12 @@
  *
  */
 
-#include "Dragon.hpp" // 包含 Dragon 类的头文件
-#include <list>
-#include <iostream>
 
 class DragonCave
 {
 public:
-    DragonCave(); // 参数less 构造函数
-    ~DragonCave(); // 析构函数
+    DragonCave();
+    ~DragonCave();
 
     // 获取 DragonCave 中的龙的列表
     const std::list<Dragon*>& GetDragons() const;
