@@ -18,16 +18,18 @@ void CGAPButton::toggleLED(){
 
 void CGAPButton::updateAdvertisementData(){
 
-    // uint8_t new_data = 8;
-    _ble.gap().stopAdvertising(ble::LEGACY_ADVERTISING_HANDLE);
+    
 
-    // ble_error_t error = _adv_data_builder.replaceData(ble::adv_data_type_t::MANUFACTURER_SPECIFIC_DATA,
-    //                                   mbed::make_Span(&new_data, 1));
-    // std::cout << "&_button_press_count: "  << &_button_press_count << std::endl;
+    uint8_t dataBytes[4];
+    dataBytes[3] = static_cast<uint8_t>((_button_press_count >> 0) & 0xFF);
+    dataBytes[2] = static_cast<uint8_t>((_button_press_count >> 8) & 0xFF);
+    dataBytes[1] = static_cast<uint8_t>((_button_press_count >> 16) & 0xFF);
+    dataBytes[0] = static_cast<uint8_t>((_button_press_count >> 24) & 0xFF);
 
+    // _ble.gap().stopAdvertising(ble::LEGACY_ADVERTISING_HANDLE);
 
     ble_error_t error = _adv_data_builder.addOrReplaceData(ble::adv_data_type_t::MANUFACTURER_SPECIFIC_DATA,
-                           mbed::make_Span(&_button_press_count, 1));
+                           mbed::make_Span(dataBytes, 4));
 
     if (error != 0U) {
         // this is an example error print. You can come up with your own ways to do so.
@@ -43,25 +45,32 @@ void CGAPButton::updateAdvertisementData(){
     );
 
 
+    if (error != 0U) {
+        // this is an example error print. You can come up with your own ways to do so.
+        // Note that the ble_error_t type variable name is error
+        std::cout << ble::BLE::errorToString(error) << std::endl;
+    } else {
+        std::cout << "setAdvertisingPayload successed" << std::endl;
+    }
+    
+    // error = _ble.gap().startAdvertising(ble::LEGACY_ADVERTISING_HANDLE);
+
     // if (error != 0U) {
     //     // this is an example error print. You can come up with your own ways to do so.
     //     // Note that the ble_error_t type variable name is error
     //     std::cout << ble::BLE::errorToString(error) << std::endl;
     // } else {
-    //     std::cout << "setAdvertisingPayload successed" << std::endl;
+    //     std::cout << "restart advertising after update succeed" << std::endl;
     // }
-    
-
-    // _ble.gap().startAdvertising(ble::LEGACY_ADVERTISING_HANDLE);
 }
 
 void CGAPButton::onBLEInitCompleteHandler(BLE::InitializationCompleteCallbackContext *context){
     // 1. check for the initialization errors using error member of context
-    BLE& ble_interface = context->ble;
-// check for the initialization errors
+    // BLE& ble_interface = context->ble;
+    // check for the initialization errors
     ble_error_t initialization_error = context->error;
     if (initialization_error) {
-// handle error
+    // handle error
         return;
     }
     // The BLE interface can be accessed now.
@@ -145,8 +154,13 @@ void CGAPButton::startAdvertising(){
 
     // std::cout << "&_button_press_count: "  << &_button_press_count << std::endl;
     // 1. Create advertisement data
+    uint8_t dataBytes[4];
+    dataBytes[3] = static_cast<uint8_t>((_button_press_count >> 0) & 0xFF);
+    dataBytes[2] = static_cast<uint8_t>((_button_press_count >> 8) & 0xFF);
+    dataBytes[1] = static_cast<uint8_t>((_button_press_count >> 16) & 0xFF);
+    dataBytes[0] = static_cast<uint8_t>((_button_press_count >> 24) & 0xFF);
     _adv_data_builder.addData(ble::adv_data_type_t::MANUFACTURER_SPECIFIC_DATA,
-                           mbed::make_Span(&_button_press_count, 1));
+                           mbed::make_Span(dataBytes, 4));
 
     _adv_data_builder.setName(_device_name.c_str());
     _adv_data_builder.setFlags();

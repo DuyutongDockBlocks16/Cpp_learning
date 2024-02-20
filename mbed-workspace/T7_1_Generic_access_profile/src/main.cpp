@@ -11,7 +11,6 @@ int main() {
     ///////////////////////////////////////////////////////////
     /*---------------------------------------------------------*/
     
-    std::cout << "entering main" << std::endl;
     // 1. Create EventQueue object for the application
     EventQueue event_queue;
     

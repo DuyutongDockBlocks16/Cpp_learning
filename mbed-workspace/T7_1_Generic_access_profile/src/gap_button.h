@@ -21,7 +21,7 @@ private:
     events::EventQueue& _event_queue; //!< A reference to the application's EventQueue
     std::string _device_name; //!< The name of the device.
 
-    uint8_t _button_press_count; //!< The number of button press counts since the system startup
+    uint32_t _button_press_count; //!< The number of button press counts since the system startup
     InterruptIn _button; //!< The button ISR that will be used for counting number of presses
     DigitalOut _led; //!< The system LED that will be used for indicating advertisement and connection status
     int _led_event_id; //!< The Event identifier (returned by EventQueue::call_every function)
